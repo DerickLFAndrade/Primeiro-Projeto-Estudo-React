@@ -1,28 +1,36 @@
 import React from "react";
 
 
-
-class App extends React.Component {
-
+export default class App extends React.Component {
   state = {
     nome: ''
+   
   }
-
-  modificaNome = (e) => {
+  mod = (e) => {
     this.setState({
-      nome:  e.target.value
-    })
+      nome: e.target.value
+    }) 
   }
 
-  render(){
-    return (
-      <div className="App">
-        <h1>Hello {this.state.nome}</h1>
-        <h2> Digite alguma coisa:</h2>
-        <input type="text" placeholder="Alguma coisa" className="input" value={this.state.nome} onChange={this.modificaNome}></input>
-      </div>
-    )
-  }
+criarComponente = () => {
+  const ops = ['Derick', 'Ellen']
+  const tdops = ops.map(op => <option>{op}</option>)
+
+  return (
+    <select>{tdops}</select>
+  )
 }
 
-export default App;
+
+    render() {
+      const NovoComp = () => this.criarComponente();
+      return (
+        <>
+        <h1>Hello World</h1>
+        <input  type="text" value={this.state.nome} onChange={'click', this.mod}></input>
+        <h1>{this.state.nome}</h1>
+          <NovoComp />
+        </>
+      )
+    }
+} 

@@ -3,7 +3,6 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    
     background: linear-gradient(black, gray, white);
     color: white;
 }
